@@ -25,7 +25,10 @@
     
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -34,18 +37,65 @@
   </head>
   <body>
     
-    <div id="intro">
+    <nav>
+      <ul>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#events">EVENTS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+    
+    <div id="intro" class="intro">
       <div class="container">
-        <div class="col-md-6">
-          <h1>FLIGHT</h1>
-          <p>Saint Joseph High School’s programing club. Started in 2015 to teach students how to hack.</p>
+        <div class="row">
+          <div class="col-md-6">
+            <h1>FLIGHT</h1>
+            <p>Saint Joseph High School’s programing club. Started in 2015 to teach students how to hack.</p>
+          </div>
         </div>
       </div>
     </div>
     
-    <div id="about">
-    
+    <div id="about" class="about section"> 
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>WE ARE HACKERS</h2>
+            <p>When the word was first used in terms of computers, a hacker was anyone who used code to build things.</p>
+            <p>Over the years the media gave the word “hacker” its more popular definition, someone who uses code to gain access to data in an unauthorized way.</p>
+          </div>
+        </div>
+      </div>
     </div>
+    
+    <div id="events" class="events section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>HACK NIGHT</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet eget enim id dictum. Donec dapibus viverra auctor. Praesent libero orci, elementum et pulvinar in, aliquet at massa. Morbi euismod auctor urna ut vulputate.</p>
+          </div>
+          <div class="col-md-4">
+            <h2>HOUR OF CODE</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet eget enim id dictum. Donec dapibus viverra auctor. Praesent libero orci, elementum et pulvinar in, aliquet at massa. Morbi euismod auctor urna ut vulputate.</p>
+          </div>
+          <div class="col-md-4">
+            <h2>LOCAL HACK DAY</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet eget enim id dictum. Donec dapibus viverra auctor. Praesent libero orci, elementum et pulvinar in, aliquet at massa. Morbi euismod auctor urna ut vulputate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      $(document).on('click', 'a', function(event){
+          event.preventDefault();
+
+          $('html, body').animate({
+              scrollTop: $( $.attr(this, 'href') ).offset().top
+          }, 500);
+      });
+    </script>
     
   </body>
 </html>
